@@ -7,13 +7,18 @@
     "transpile-check": "babel public/javascripts -d build/javascripts",
     "build": "gulp default",
     "start": "node app",
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "setup": "node setup.js"
   },
   "keywords": [
     "nodejs",
     "boilerplate",
     "project"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsachit/nodejs-boilerplate.git"
+  },
   "author": "Sachit Karki",
   "license": "ISC",
   "bugs": {
