@@ -4,7 +4,10 @@
   "description": "This is my default nodejs boilerplate so i can start any project in this structure.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "transpile-check": "babel public/javascripts -d build/javascripts",
+    "build": "gulp default",
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "keywords": [
     "nodejs",
