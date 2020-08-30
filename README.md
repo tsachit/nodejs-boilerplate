@@ -21,14 +21,10 @@ npm run setup
 - delete node_modules
 - change `package.json` according to your desire.
 - run "npm install"
+- create .env from .env.example `cp .env.example .env` (not necessary for all projects)
 - delete `.git` folder(so you can setup your own git)
 
 #### You can now delete setup.js.
-
-#### Make `.env` file from `.env.example` (Didn't added this in setup.js because setup.js is more of a generic script that can be used in any nodejs project)
-```
-cp .env.example .env
-```
 
 Feel free to ping me if this script does work for you
 
