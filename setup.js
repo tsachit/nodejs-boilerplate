@@ -28,6 +28,29 @@ const installPackages = async () => {
   });
 }
 
+const createEnv = () => {
+  return new Promise((resolve, reject) => {
+    console.log();
+    const sourceFile = '.env.example';
+    const destinationFile = '.env';
+    if(fs.existsSync(destinationFile)) {
+      console.log(`Not created .env because ${destinationFile} already exists.`);
+    } else if (fs.existsSync(sourceFile)) {
+      fs.copyFile(sourceFile, destinationFile, (err) => {
+        if (err) {
+          console.log(`${destinationFile} is not created from ${sourceFile}, do it manually.`);
+        }
+        else {
+          console.log(`${destinationFile} created successfully from ${sourceFile}.`);
+        }
+      });
+    } else {
+      console.log(`Not created .env because ${sourceFile} does not exist`);
+    }
+    resolve();
+  });
+};
+
 const deletePackageLock = () => {
   return new Promise((resolve, reject) => {
     console.log();
@@ -164,6 +187,7 @@ const setup = async () => {
     await deletePackageLock();
     await rewritePackageJson();
     await installPackages();
+    await createEnv();
     await gitDeleteConfirmation();
   }
   rl.close();
