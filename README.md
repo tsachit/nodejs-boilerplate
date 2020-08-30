@@ -25,6 +25,11 @@ npm run setup
 
 #### You can now delete setup.js.
 
+#### Make `.env` file from `.env.example` (Didn't added this in setup.js because setup.js is more of a generic script that can be used in any nodejs project)
+```
+cp .env.example .env
+```
+
 Feel free to ping me if this script does work for you
 
 Thanks 😎
